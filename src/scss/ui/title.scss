@@ -1,0 +1,22 @@
+@use "../base/templates" as *;
+@use "../base/media" as *;
+
+.s-title {
+  font-weight: 500;
+  font-size: 60px;
+  margin: 0;
+
+  span {
+    color: var(--primary);
+  }
+
+  @include laptop {
+    font-size: 48px;
+  }
+  @include laptop-middle {
+    font-size: 36px;
+  }
+  @include tablet-min {
+    font-size: 26px;
+  }
+}

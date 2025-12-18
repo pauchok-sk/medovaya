@@ -1,0 +1,105 @@
+@use "../base/templates" as *;
+@use "../base/media" as *;
+
+.s-hero {
+  position: relative;
+  padding: 150px 0px 130px 0px;
+  display: flex;
+  align-items: flex-end;
+  min-height: 830px;
+  max-height: 100dvh;
+  z-index: 1;
+
+  @include laptop {
+    min-height: 600px;
+    padding: 80px 0px;
+  }
+  @include laptop-min {
+    max-height: none;
+    min-height: 550px;
+    padding: 70px 0px 20px 0px;
+  }
+
+  &::before {
+    position: absolute;
+    content: "";
+    inset: 0;
+    background: radial-gradient(
+      100% 100% at 46.18% 0%,
+      rgba(5, 5, 5, 0) 0%,
+      rgba(5, 5, 5, 0.5) 67.42%,
+      rgba(5, 5, 5, 0.75) 81.83%,
+      #050505 100%
+    );
+    z-index: -1;
+  }
+  &__wrapper {
+    display: flex;
+    align-items: center;
+    gap: 40px;
+    @include laptop-min {
+      display: block;
+      text-align: center;
+    }
+  }
+  &__info {
+    max-width: 750px;
+    @include laptop {
+      max-width: 670px;
+    }
+    @include laptop-min {
+      max-width: none;
+    }
+  }
+  &__title {
+    margin-bottom: 30px;
+  }
+  &__content {
+    font-size: 24px;
+    margin: 0px 0px 75px 0px;
+    @include laptop {
+      font-size: 20px;
+    }
+    @include laptop-min {
+      font-size: 18px;
+      margin-bottom: 40px;
+    }
+    @include tablet-min {
+      font-size: 16px;
+    }
+  }
+  &__play-mob {
+    margin: 0px auto 40px auto;
+    @media (min-width: 992px) {
+      display: none;
+    }
+  }
+  &__buttons {
+    display: flex;
+    gap: 30px;
+    @include laptop-min {
+      gap: 20px;
+
+      .btn-s {
+        flex: 1;
+      }
+    }
+    @include tablet-min {
+      flex-wrap: wrap;
+
+      .btn-s {
+        flex: auto;
+        width: 100%;
+      }
+    }
+  }
+  &__play {
+    margin: 0 auto;
+    @include laptop {
+      margin: 0px 0px 0px auto;
+    }
+    @include laptop-min {
+      display: none;
+    }
+  }
+}

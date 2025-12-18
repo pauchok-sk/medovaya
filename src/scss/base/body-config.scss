@@ -1,0 +1,16 @@
+@use "./media" as *;
+
+.body-hidden {
+  overflow: hidden;
+  touch-action: none;
+}
+.body {
+  font-family: "Montserrat", sans-serif;
+  background: var(--black);
+  color: white;
+  font-size: 18px;
+
+  @include laptop-min {
+    font-size: 16px;
+  }
+}
