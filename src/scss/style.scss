@@ -10,6 +10,7 @@
 @use "./ui/button";
 @use "./ui/list";
 @use "./ui/title";
+@use "./ui/slider";
 
 // widgets
 @use "./widgets/burger";
@@ -18,5 +19,7 @@
 @use "./components/header";
 
 @use "./components/s-hero";
+@use "./components/s-adv";
+@use "./components/s-complex";
 
 @use "./components/footer";
