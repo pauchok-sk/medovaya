@@ -8,7 +8,34 @@ export default function sliders() {
       spaceBetween: 15,
       pagination: {
         el: ".s-adv .slider-pagination",
-        clickable: true
+        clickable: true,
+      },
+    });
+  }
+
+  const complexSlider = document.querySelector(".s-complex__gallery-slider");
+
+  if (complexSlider) {
+    const complexSliderThumb = document.querySelector(
+      ".s-complex__thumb-slider"
+    );
+
+    const swiperThumb = new Swiper(complexSliderThumb, {
+      speed: 700,
+      slidesPerView: 4,
+      spaceBetween: 10,
+      direction: "vertical",
+    });
+
+    const swiper = new Swiper(complexSlider, {
+      speed: 900,
+      spaceBetween: 15,
+      thumbs: {
+        swiper: swiperThumb
+      },
+      navigation: {
+        prevEl: ".s-complex .slider-arrow._prev",
+        nextEl: ".s-complex .slider-arrow._next"
       }
     })
   }

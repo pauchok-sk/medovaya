@@ -48,6 +48,16 @@
     --h-color: white;
     --h-bgc-color: transparent;
   }
+  &._black {
+    --bgc-color: var(--black);
+    --border-color: var(--black);
+    --color: var(--primary);
+
+    --h-color: white;
+    --h-bgc-color: var(--black);
+    --h-border-color: var(--black);
+    --h-box-shadow: 2px 2px 7px 0px var(--black);
+  }
 }
 
 .btn-play {
