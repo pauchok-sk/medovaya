@@ -47,6 +47,13 @@
 
     --h-color: white;
     --h-bgc-color: transparent;
+
+    &._active {
+      --bgc-color: rgba(255, 255, 255, 0.1);
+
+      pointer-events: none;
+      box-shadow: var(--h-box-shadow);
+    }
   }
   &._black {
     --bgc-color: var(--black);

@@ -10,6 +10,9 @@
     color: var(--primary);
   }
 
+  @include desktop {
+    font-size: 52px;
+  }
   @include laptop {
     font-size: 48px;
   }
@@ -17,6 +20,11 @@
     font-size: 36px;
   }
   @include tablet-min {
-    font-size: 26px;
+    font-size: 24px;
+  }
+
+  &._line {
+    padding-bottom: 3px;
+    border-bottom: 2px solid var(--primary);
   }
 }

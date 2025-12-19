@@ -12,6 +12,9 @@
 @use "./ui/title";
 @use "./ui/slider";
 @use "./ui/sect";
+@use "./ui/more";
+@use "./ui/tab";
+@use "./ui/card-stock";
 
 // widgets
 @use "./widgets/burger";
@@ -22,5 +25,7 @@
 @use "./components/s-hero";
 @use "./components/s-adv";
 @use "./components/s-complex";
+@use "./components/s-price";
+@use "./components/s-stocks";
 
 @use "./components/footer";

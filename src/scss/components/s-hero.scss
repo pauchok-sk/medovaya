@@ -53,6 +53,9 @@
   }
   &__title {
     margin-bottom: 30px;
+    @include tablet-min {
+      font-size: 26px;
+    }
   }
   &__content {
     font-size: 24px;

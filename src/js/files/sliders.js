@@ -24,19 +24,52 @@ export default function sliders() {
       speed: 700,
       slidesPerView: 4,
       spaceBetween: 10,
-      direction: "vertical",
+      direction: "horizontal",
+      breakpoints: {
+        1366: {
+          slidesPerView: 4,
+          direction: "vertical",
+        },
+      },
     });
 
     const swiper = new Swiper(complexSlider, {
       speed: 900,
       spaceBetween: 15,
       thumbs: {
-        swiper: swiperThumb
+        swiper: swiperThumb,
       },
       navigation: {
         prevEl: ".s-complex .slider-arrow._prev",
-        nextEl: ".s-complex .slider-arrow._next"
-      }
-    })
+        nextEl: ".s-complex .slider-arrow._next",
+      },
+    });
+  }
+
+  const stocksSlider = document.querySelector(".s-stocks__slider");
+
+  if (stocksSlider) {
+    const swiper = new Swiper(stocksSlider, {
+      speed: 900,
+      spaceBetween: 20,
+      slidesPerView: "auto",
+      autoplay: {
+        delay: 4000,
+      },
+      navigation: {
+        prevEl: ".s-stocks .slider-arrow._prev",
+        nextEl: ".s-stocks .slider-arrow._next",
+      },
+      pagination: {
+        el: ".s-stocks .slider-pagination",
+        clickable: true,
+      },
+      breakpoints: {
+        1200: {
+          spaceBetween: 20,
+          slidesPerView: 3,
+        },
+      },
+    });
   }
 }
