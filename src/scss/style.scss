@@ -15,6 +15,7 @@
 @use "./ui/more";
 @use "./ui/tab";
 @use "./ui/card-stock";
+@use "./ui/input";
 
 // widgets
 @use "./widgets/burger";
@@ -27,5 +28,6 @@
 @use "./components/s-complex";
 @use "./components/s-price";
 @use "./components/s-stocks";
+@use "./components/s-brone";
 
 @use "./components/footer";

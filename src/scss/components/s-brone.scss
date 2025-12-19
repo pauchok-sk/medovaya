@@ -1,0 +1,87 @@
+@use "../base/templates" as *;
+@use "../base/media" as *;
+
+.s-brone {
+  position: relative;
+  overflow: hidden;
+  z-index: 1;
+  &::before, &::after {
+    position: absolute;
+    content: "";
+    background: url('@img/brone-decor.png') 0 0 / contain no-repeat;
+    width: 1070px;
+    height: 585px;
+    z-index: -1;
+
+    @include desktop {
+      width: 1195px;
+      height: 655px;
+    }
+  }
+  &::before {
+    top: 0;
+    left: -175px;
+    @include desktop {
+      left: 50%;
+      transform: translateX(-40%);
+      bottom: 0;
+      top: auto;
+    }
+  }
+  &::after {
+    bottom: -100px;
+    right: -340px;
+    @include desktop {
+      display: none;
+    }
+  }
+  
+  &__wrapper {
+    display: flex;
+    align-items: start;
+    justify-content: space-between;
+    gap: 30px;
+    @include laptop-min {
+      flex-wrap: wrap;
+      gap: 40px;
+    }
+  }
+  &__info {
+    flex: 0 1 750px;
+    @include tablet-min {
+      text-align: center;
+    }
+  }
+  &__title {
+    max-width: 725px;
+    margin-bottom: 50px;
+    @include laptop-min {
+      margin-bottom: 30px;
+    }
+    @include tablet {
+      margin-bottom: 20px;
+    }
+  }
+  &__content {
+    font-weight: 300;
+    line-height: 150%;
+    margin: 0;
+    @include tablet {
+      font-size: 16px;
+    }
+  }
+  &__form {
+    width: 580px;
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 10px;
+    flex-shrink: 0;
+
+    @include laptop-middle {
+      width: 450px;
+    }
+    @include laptop-min {
+      width: 100%;
+    }
+  }
+}
