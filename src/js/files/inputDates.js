@@ -5,6 +5,7 @@ export default function inputDates() {
     inputs.forEach((input) => {
       const datepicker = new AirDatepicker(input, {
         isMobile: window.matchMedia("(max-width:992px)").matches,
+        autoClose: true,
       });
     });
   }

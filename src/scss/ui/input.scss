@@ -42,12 +42,107 @@
 
   &._date {
     padding-right: 45px !important;
-    background: url('@img/date-icon.svg') center right 20px / 16px auto no-repeat;
+    background: url("@img/date-icon.svg") center right 20px / 16px auto
+      no-repeat;
     background-color: white;
   }
 
   @include tablet {
     font-size: 16px;
     padding: 10px 20px;
+  }
+}
+.input-variants {
+  display: flex;
+  align-items: center;
+  gap: 30px;
+  width: 100%;
+  @include tablet-min {
+    justify-content: space-between;
+  }
+  &__text {
+    font-weight: 600;
+    font-size: 17px;
+    line-height: 150%;
+    @include tablet {
+      font-size: 16px;
+    }
+  }
+
+  .wpcf7-form-control {
+    display: flex;
+    gap: 10px;
+
+    input[type="radio"] {
+      display: none;
+
+      &:checked + .wpcf7-list-item-label::after {
+        background: url("@img/check-primary.svg") center / 10px auto no-repeat;
+      }
+    }
+    .wpcf7-list-item-label {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      cursor: pointer;
+
+      font-size: 17px;
+      line-height: 150%;
+      @include tablet {
+        font-size: 16px;
+      }
+
+      &::after {
+        flex-shrink: 0;
+        content: "";
+        width: 16px;
+        height: 16px;
+        border: 1px solid var(--primary);
+      }
+    }
+  }
+}
+
+.check-wrapper {
+  position: relative;
+  z-index: 1;
+
+  input[type="checkbox"] {
+    position: absolute;
+    top: 0;
+    left: 0;
+    opacity: 0;
+    z-index: -1;
+
+    &:checked + .wpcf7-list-item-label::before {
+      background: url("@img/check-primary.svg") center / 10px auto no-repeat;
+    }
+  }
+  .wpcf7-list-item-label {
+    display: flex;
+    align-items: start;
+    gap: 10px;
+    cursor: pointer;
+
+    font-weight: 300;
+    font-size: 14px;
+    line-height: 150%;
+
+    a {
+      text-decoration: underline;
+      transition: color .3s ease;
+      @include hover {
+        color: var(--primary);
+      }
+    }
+
+    &::before {
+      flex-shrink: 0;
+      content: "";
+      width: 16px;
+      height: 16px;
+      margin-top: 3px;
+      border: 1px solid var(--primary);
+    }
   }
 }

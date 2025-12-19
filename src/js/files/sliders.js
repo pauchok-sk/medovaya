@@ -72,4 +72,48 @@ export default function sliders() {
       },
     });
   }
+
+  const gallerySlider = document.querySelector(".s-gallery__slider");
+
+  if (gallerySlider) {
+    const fractionObject = {
+      pagination: {
+        el: ".s-gallery .slider-fraction",
+        type: "fraction",
+      },
+    };
+
+    const swiper = new Swiper(gallerySlider, {
+      speed: 900,
+      spaceBetween: 15,
+      slidesPerView: "auto",
+      autoplay: {
+        delay: 4500,
+      },
+      navigation: {
+        prevEl: ".s-gallery .slider-arrow._prev",
+        nextEl: ".s-gallery .slider-arrow._next",
+      },
+      pagination: {
+        el: ".s-gallery .slider-pagination",
+        clickable: true,
+      },
+      scrollbar: {
+        el: ".s-gallery .slider-scrollbar",
+        draggable: true,
+      },
+      breakpoints: {
+        1200: {
+          spaceBetween: 30,
+          slidesPerView: 3,
+          ...fractionObject,
+        },
+        768: {
+          spaceBetween: 20,
+          slidesPerView: "auto",
+          ...fractionObject,
+        },
+      },
+    });
+  }
 }

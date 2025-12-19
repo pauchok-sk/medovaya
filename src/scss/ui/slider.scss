@@ -31,7 +31,7 @@
 
     &.swiper-pagination-bullet-active {
       flex-basis: 20px;
-      border-radius: 2px;
+      border-radius: 3px;
       opacity: 1;
       @include tablet {
         flex-basis: 14px;
@@ -44,11 +44,19 @@
       display: none;
     }
   }
+  &._black {
+    .swiper-pagination-bullet {
+      background-color: var(--black);
+    }
+  }
 }
 
 .slider-nav {
   display: flex;
   gap: 30px;
+  @include laptop-middle {
+    gap: 20px;
+  }
   @include tablet {
     display: none;
   }
@@ -77,11 +85,68 @@
   }
 
   &._rotate {
-    width: 26px;
-    height: 16px;
+    svg {
+      width: 26px;
+      height: 16px;
+    }
   }
   svg {
     width: 16px;
     height: 26px;
+  }
+}
+.slider-scrollbar {
+  width: 100%;
+  background-color: rgba(5, 5, 5, 0.3);
+  height: 2px;
+  flex-shrink: 0;
+
+  .swiper-scrollbar-drag {
+    position: relative;
+    background-color: var(--black);
+
+    &::before {
+      position: absolute;
+      content: "";
+      inset: -2px 0px;
+      cursor: pointer;
+    }
+  }
+}
+.slider-fraction {
+  display: flex;
+  gap: 3px;
+  font-size: 32px;
+
+  @include laptop-middle {
+    font-size: 24px;
+  }
+
+  span {
+    display: block;
+    width: 30px;
+    text-align: center;
+  }
+}
+.slider-interface {
+  display: flex;
+  align-items: center;
+  gap: 50px;
+
+  @include laptop-middle {
+    gap: 30px;
+  }
+  @include laptop-min {
+    gap: 20px;
+  }
+  @include tablet {
+    display: none;
+  }
+
+  .slider-scrollbar {
+    width: 250px;
+    @include laptop-middle {
+      width: 200px;
+    }
   }
 }
