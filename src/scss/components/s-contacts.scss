@@ -1,0 +1,78 @@
+@use "../base/templates" as *;
+@use "../base/media" as *;
+
+.s-contacts {
+  position: relative;
+  overflow: hidden;
+  z-index: 1;
+  &::before {
+    position: absolute;
+    content: "";
+    height: 100%;
+    width: 1860px;
+    background: url("@img/decor-contacts.png") 0 0 / contain no-repeat;
+    right: -700px;
+    z-index: -1;
+  }
+  &__wrapper {
+    position: relative;
+  }
+  &__map {
+    height: 660px;
+    width: 100%;
+  }
+  &__main {
+    position: absolute;
+    width: 425px;
+    top: 60px;
+    left: 90px;
+    bottom: 60px;
+
+    box-shadow: 0 0 15px 0 rgba(0, 0, 0, 0.2);
+    background-color: var(--black-l);
+    border-radius: 4px;
+
+    z-index: 10;
+  }
+  &__main-inside {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    padding: 50px;
+    z-index: 1;
+  }
+  &__logo {
+    display: block;
+    width: 100%;
+  }
+  &__item {
+    font-weight: 300;
+    font-size: 17px;
+    a {
+      transition: color 0.3s ease;
+      @include hover {
+        color: var(--primary);
+      }
+    }
+  }
+  &__tel {
+    display: block;
+    width: fit-content;
+    margin-bottom: 5px;
+
+    font-weight: 400;
+    font-size: 24px;
+  }
+  &__mail {
+  }
+  &__btn {
+  }
+  &__figure {
+    position: absolute;
+    display: block;
+    right: -80px;
+    bottom: 105px;
+    z-index: -1;
+  }
+}
