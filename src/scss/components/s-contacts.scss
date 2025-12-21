@@ -13,13 +13,17 @@
     background: url("@img/decor-contacts.png") 0 0 / contain no-repeat;
     right: -700px;
     z-index: -1;
+
+    @include laptop-middle {
+      width: 830px;
+      height: 450px;
+      right: 50%;
+      bottom: -40px;
+      transform: translateX(50%);
+    }
   }
   &__wrapper {
     position: relative;
-  }
-  &__map {
-    height: 660px;
-    width: 100%;
   }
   &__main {
     position: absolute;
@@ -33,6 +37,12 @@
     border-radius: 4px;
 
     z-index: 10;
+
+    @include laptop {
+      position: static;
+      width: 100%;
+      margin-bottom: 55px;
+    }
   }
   &__main-inside {
     position: relative;
@@ -41,14 +51,30 @@
     gap: 30px;
     padding: 50px;
     z-index: 1;
+    @include laptop {
+      padding: 40px;
+      align-items: center;
+    }
+    @include laptop-min {
+      gap: 25px;
+    }
   }
   &__logo {
     display: block;
     width: 100%;
+    @include laptop {
+      width: 400px;
+      margin: 0 auto;
+    }
   }
   &__item {
     font-weight: 300;
     font-size: 17px;
+
+    @include tablet {
+      font-size: 16px;
+    }
+
     a {
       transition: color 0.3s ease;
       @include hover {
@@ -63,6 +89,9 @@
 
     font-weight: 400;
     font-size: 24px;
+    @include tablet {
+      font-size: 22px;
+    }
   }
   &__mail {
   }
@@ -74,5 +103,24 @@
     right: -80px;
     bottom: 105px;
     z-index: -1;
+    @include laptop {
+      display: none;
+    }
+  }
+  &__map {
+    height: 660px;
+    width: 100%;
+    @include laptop-min {
+      height: 500px;
+    }
+    @include tablet {
+      height: 450px;
+    }
+    @include tablet-min {
+      height: 350px;
+    }
+    @include mobile {
+      height: 220px;
+    }
   }
 }

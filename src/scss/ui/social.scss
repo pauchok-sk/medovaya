@@ -18,6 +18,10 @@
     border-color 0.3s ease,
     box-shadow 0.3s ease !important;
 
+  @include tablet {
+    width: 45px;
+    height: 40px;
+  }
   @include hover {
     color: var(--primary);
     border-color: var(--primary);
@@ -27,5 +31,9 @@
   svg {
     width: 20px;
     height: 20px;
+    @include tablet {
+      width: 16px;
+      height: 16px;
+    }
   }
 }
