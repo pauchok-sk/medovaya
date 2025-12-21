@@ -5,8 +5,12 @@ export default function burger() {
   const burgerOverlay = document.querySelector("#burger-overlay");
 
   if (burger) {
-    const header = document.querySelector(".header");
-    // const headerHeight = header.clientHeight;
+    const menuButtons = burger.querySelectorAll(".burger__list a");
+
+    menuButtons.forEach((btn) =>
+      btn.addEventListener("click", handlerBurgerClose)
+    );
+
     burger.addEventListener("click", (e) => e.stopPropagation());
 
     burgerOverlay.addEventListener("click", handlerBurgerClose);
@@ -37,13 +41,6 @@ export default function burger() {
       burger.classList.add("_open");
       burgerOverlay.classList.add("_active");
       document.body.classList.add("body-hidden");
-
-      if (
-        window.matchMedia("(max-width: 991px)").matches &&
-        header.classList.contains("_hide")
-      ) {
-        header.classList.remove("_hide");
-      }
 
       // updateHeightBurger();
     }
